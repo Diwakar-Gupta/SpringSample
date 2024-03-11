@@ -2,6 +2,7 @@ package com.example.Product.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.Product.dto.FakeStoreProductDto;
 import com.example.Product.service.ProductService;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +23,7 @@ public class ProductController {
     }
 
     @GetMapping("/products/{id}/")
-    public String getProductbyId(@PathVariable Long id) {
+    public FakeStoreProductDto getProductbyId(@PathVariable Long id) {
 
         return ps.getProductbyId(id);
     }
