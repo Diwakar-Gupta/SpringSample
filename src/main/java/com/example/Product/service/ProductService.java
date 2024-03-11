@@ -11,8 +11,9 @@ public class ProductService {
     RestTemplate restTemplate = new RestTemplate();
     String url = "https://fakestoreapi.com";
 
-    public String getAllProducts() {
-        return "All Products";
+    public FakeStoreProductDto[] getAllProducts() {
+        FakeStoreProductDto response[] = restTemplate.getForObject(url + "/products/", FakeStoreProductDto[].class);
+        return response;
     }
 
     public FakeStoreProductDto getProductbyId(Long id) {

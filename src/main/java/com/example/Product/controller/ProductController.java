@@ -18,7 +18,7 @@ public class ProductController {
     }
 
     @GetMapping("/products/")
-    public String getAllProducts() {
+    public FakeStoreProductDto[] getAllProducts() {
         return ps.getAllProducts();
     }
 
